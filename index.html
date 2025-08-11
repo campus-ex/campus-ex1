@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Campus-Ex</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        transition: background 0.3s, color 0.3s;
+        animation: gradientShift 15s ease infinite;
+        background-size: 400% 400%;
+    }
+
+    /* Dark mode gradient animation */
+    body {
+        background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1b2a35);
+        color: white;
+    }
+
+    /* Light mode gradient animation */
+    body.light-mode {
+        background: linear-gradient(-45deg, #ffaf00, #ff8800, #ff6a00, #ffc107);
+        color: #222;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 22px;
+    }
+
+    .toggle-btn {
+        padding: 8px 15px;
+        cursor: pointer;
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        border-radius: 8px;
+        transition: background 0.3s;
+    }
+
+    body.light-mode .toggle-btn {
+        background: rgba(0,0,0,0.2);
+        color: #222;
+    }
+
+    .about-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        max-width: 1100px;
+        margin: auto;
+        padding: 50px 20px;
+        gap: 30px;
+    }
+
+    .about-image {
+        flex: 1;
+        min-width: 280px;
+        animation: fadeInUp 1s forwards;
+    }
+
+    .about-image img {
+        width: 75%;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    }
+
+    .about-text {
+        flex: 2;
+        min-width: 280px;
+        animation: fadeInUp 1s forwards 0.3s;
+        opacity: 0;
+    }
+
+    .about-text h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .about-text .logo {
+        max-width: 150px;
+        margin-bottom: 5px;
+    }
+
+    .tagline {
+        font-style: italic;
+        font-size: 14px;
+        margin-bottom: 15px;
+        opacity: 0.8;
+    }
+
+    /* Call-to-action button */
+    .cta-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 25px;
+        background: #ffaf00;
+        color: #222;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        transition: transform 0.3s, background 0.3s;
+        animation: pulseBtn 2s infinite;
+    }
+
+    .cta-btn:hover {
+        transform: scale(1.05);
+        background: #ff8800;
+    }
+
+    body.light-mode .cta-btn {
+        background: #222;
+        color: white;
+    }
+
+    body.light-mode .cta-btn:hover {
+        background: #444;
+    }
+
+    /* Social links */
+    .social-links {
+        margin-top: 15px;
+    }
+
+    .social-links a {
+        color: inherit;
+        margin: 0 8px;
+        font-size: 20px;
+        transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+        color: #ffaf00;
+    }
+
+    /* Testimonials */
+    .testimonials {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 12px;
+    }
+
+    .testimonials h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .testimonial-item {
+        margin-bottom: 15px;
+        font-size: 15px;
+        text-align: center;
+        font-style: italic;
+        opacity: 0.9;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+        to { opacity: 1; transform: translateY(0); }
+        from { opacity: 0; transform: translateY(30px); }
+    }
+
+    @keyframes pulseBtn {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+
+    @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    @media (max-width: 768px) {
+        .about-section {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>About Campus-Ex</h1>
+    <button class="toggle-btn" id="themeToggle">color</button>
+</header>
+
+<section class="about-section">
+    <div class="about-image">
+        <img src="founder.png" alt="Founder">
+    </div>
+
+    <div class="about-text">
+        <img src="logo.png" alt="Campus-Ex Logo" class="logo">
+        <div class="tagline">The Student Marketplace, Simplified.</div>
+        <h2>Hi, I’m Palakaveety Bharadwaj 👋</h2>
+        <p>
+            I’m the founder of <strong>Campus-Ex</strong>, a platform created to make 
+            student-to-student buying and selling simple, safe, and fun. 
+            As a student myself, I saw how hard it was to find affordable 
+            items or sell what we no longer needed.
+        </p>
+        <p>
+            With Campus-Ex, you can buy and sell books, electronics, clothes, 
+            and more — all in one trusted space. Our goal is to save students 
+            time, money, and hassle while fostering a connected campus community.
+        </p>
+
+        <a href="https://app--campus-ex-8732ac58.base44.app/login?from_url=https://app--campus-ex-8732ac58.base44.app/&app_id=688fa7fa45a48e548732ac58" class="cta-btn">Visit Campus-Ex 🚀</a>
+
+        <div class="social-links">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h3>Why Students Love Campus-Ex ❤️</h3>
+    <div class="testimonial-item">...</div>
+    <div class="testimonial-item">Adding this section after getting REAL Reviews.</div>
+    <div class="testimonial-item">...</div>
+</section>
+
+<script>
+    document.getElementById("themeToggle").addEventListener("click", function() {
+        document.body.classList.toggle("light-mode");
+    });
+</script>
+
+</body>
+</html>
